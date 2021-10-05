@@ -1,0 +1,277 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_listing",
+						"type": "uint256"
+					}
+				],
+				"name": "ListingCanceled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_contract",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_token",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_seller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_price",
+						"type": "uint256"
+					}
+				],
+				"name": "ListingCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_listing",
+						"type": "uint256"
+					}
+				],
+				"name": "ListingSold",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "activeListings",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_listing",
+						"type": "uint256"
+					}
+				],
+				"name": "cancelListing",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_contract",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_token",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_price",
+						"type": "uint256"
+					}
+				],
+				"name": "createListing",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "listing",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_listing",
+						"type": "uint256"
+					}
+				],
+				"name": "getListing",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "contract_",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "token",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "seller",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum IMarket.Status",
+								"name": "status",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct IMarket.Listing",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "listingCreationPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "listingPurchaseFee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_listing",
+						"type": "uint256"
+					}
+				],
+				"name": "purchase",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "A marketplace for selling/purchasing NFTs to/from other users.",
+			"events": {
+				"ListingCanceled(uint256)": {
+					"details": "Event that is emitted when a listing is canceled."
+				},
+				"ListingCreated(address,uint256,address,uint256)": {
+					"details": "Event that is emitted when a listing is created."
+				},
+				"ListingSold(uint256)": {
+					"details": "Event that is emitted when a listing is sold."
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"activeListings()": {
+					"details": "Get all active listings."
+				},
+				"cancelListing(uint256)": {
+					"details": "Cancel an active listing."
+				},
+				"createListing(address,uint256,uint256)": {
+					"details": "Create a new listing."
+				},
+				"getListing(uint256)": {
+					"details": "Get the details of a listing."
+				},
+				"listingCreationPrice()": {
+					"details": "The price of creating a new listing."
+				},
+				"listingPurchaseFee()": {
+					"details": "Percentage of the purchasing price that is retained by the Market operator."
+				},
+				"purchase(uint256)": {
+					"details": "Purchase an active listing."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/IMarket.sol": "IMarket"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/IMarket.sol": {
+			"keccak256": "0xba92e6ba3cc264091be2173743ac56a360482361a6ad3f506f69b88c4ac7e863",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://43503f37f5c7781a10f7dc77ed4c9a4c166890e6c295eae7c6f26d18b02ce870",
+				"dweb:/ipfs/QmSnCa3BWnHdGU43SDy9V1h7Ds7dVDUE9Pa67bcJYybjZ7"
+			]
+		}
+	},
+	"version": 1
+}

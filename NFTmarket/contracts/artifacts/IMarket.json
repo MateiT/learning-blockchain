@@ -1,0 +1,260 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"görli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "",
+			"opcodes": "",
+			"sourceMap": ""
+		},
+		"gasEstimates": null,
+		"methodIdentifiers": {
+			"activeListings()": "d3a17f29",
+			"cancelListing(uint256)": "305a67a8",
+			"createListing(address,uint256,uint256)": "24780c56",
+			"getListing(uint256)": "107a274a",
+			"listingCreationPrice()": "c7189507",
+			"listingPurchaseFee()": "ed3fb36b",
+			"purchase(uint256)": "efef39a1"
+		}
+	},
+	"abi": [
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "uint256",
+					"name": "_listing",
+					"type": "uint256"
+				}
+			],
+			"name": "ListingCanceled",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "_contract",
+					"type": "address"
+				},
+				{
+					"indexed": true,
+					"internalType": "uint256",
+					"name": "_token",
+					"type": "uint256"
+				},
+				{
+					"indexed": true,
+					"internalType": "address",
+					"name": "_seller",
+					"type": "address"
+				},
+				{
+					"indexed": false,
+					"internalType": "uint256",
+					"name": "_price",
+					"type": "uint256"
+				}
+			],
+			"name": "ListingCreated",
+			"type": "event"
+		},
+		{
+			"anonymous": false,
+			"inputs": [
+				{
+					"indexed": true,
+					"internalType": "uint256",
+					"name": "_listing",
+					"type": "uint256"
+				}
+			],
+			"name": "ListingSold",
+			"type": "event"
+		},
+		{
+			"inputs": [],
+			"name": "activeListings",
+			"outputs": [
+				{
+					"internalType": "uint256[]",
+					"name": "",
+					"type": "uint256[]"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "_listing",
+					"type": "uint256"
+				}
+			],
+			"name": "cancelListing",
+			"outputs": [],
+			"stateMutability": "nonpayable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "address",
+					"name": "_contract",
+					"type": "address"
+				},
+				{
+					"internalType": "uint256",
+					"name": "_token",
+					"type": "uint256"
+				},
+				{
+					"internalType": "uint256",
+					"name": "_price",
+					"type": "uint256"
+				}
+			],
+			"name": "createListing",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "listing",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "payable",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "_listing",
+					"type": "uint256"
+				}
+			],
+			"name": "getListing",
+			"outputs": [
+				{
+					"components": [
+						{
+							"internalType": "address",
+							"name": "contract_",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "token",
+							"type": "uint256"
+						},
+						{
+							"internalType": "address",
+							"name": "seller",
+							"type": "address"
+						},
+						{
+							"internalType": "uint256",
+							"name": "price",
+							"type": "uint256"
+						},
+						{
+							"internalType": "enum IMarket.Status",
+							"name": "status",
+							"type": "uint8"
+						}
+					],
+					"internalType": "struct IMarket.Listing",
+					"name": "",
+					"type": "tuple"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "listingCreationPrice",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [],
+			"name": "listingPurchaseFee",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		},
+		{
+			"inputs": [
+				{
+					"internalType": "uint256",
+					"name": "_listing",
+					"type": "uint256"
+				}
+			],
+			"name": "purchase",
+			"outputs": [],
+			"stateMutability": "payable",
+			"type": "function"
+		}
+	]
+}

@@ -1,0 +1,440 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_listing",
+						"type": "uint256"
+					}
+				],
+				"name": "ListingCanceled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_contract",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_token",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_seller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_price",
+						"type": "uint256"
+					}
+				],
+				"name": "ListingCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "_listing",
+						"type": "uint256"
+					}
+				],
+				"name": "ListingSold",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "activeListings",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_listing",
+						"type": "uint256"
+					}
+				],
+				"name": "cancelListing",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_contract",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_token",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_price",
+						"type": "uint256"
+					}
+				],
+				"name": "createListing",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "listing",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_listing",
+						"type": "uint256"
+					}
+				],
+				"name": "getListing",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "contract_",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "token",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "seller",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "price",
+								"type": "uint256"
+							},
+							{
+								"internalType": "enum IMarket.Status",
+								"name": "status",
+								"type": "uint8"
+							}
+						],
+						"internalType": "struct IMarket.Listing",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenOwner",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenAddress",
+						"type": "address"
+					}
+				],
+				"name": "getNftsOfOwner",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "getOwnerOfNft",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "listingCreationPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "listingPurchaseFee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "listings",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "contract_",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "token",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "seller",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					},
+					{
+						"internalType": "enum IMarket.Status",
+						"name": "status",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_listing",
+						"type": "uint256"
+					}
+				],
+				"name": "purchase",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"activeListings()": {
+					"details": "Get all active listings."
+				},
+				"cancelListing(uint256)": {
+					"details": "Cancel an active listing."
+				},
+				"createListing(address,uint256,uint256)": {
+					"details": "Create a new listing."
+				},
+				"getListing(uint256)": {
+					"details": "Get the details of a listing."
+				},
+				"listingCreationPrice()": {
+					"details": "The price of creating a new listing."
+				},
+				"listingPurchaseFee()": {
+					"details": "Percentage of the purchasing price that is retained by the Market operator."
+				},
+				"purchase(uint256)": {
+					"details": "Purchase an active listing."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Market.sol": "Market"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/token/ERC721/ERC721.sol": {
+			"keccak256": "0xb5703727cd627ff1254f51d5790510e9c9653564f817edbeb808be075b841c85",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6dab4e22399bfc872f29d5d06284295bc0b3587572fd14d5287e44db4f51427f",
+				"dweb:/ipfs/QmVENMZu3mDyhytmi8tBTW53NK9eBxsm6G2JLo6wrSsunq"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC721/IERC721.sol": {
+			"keccak256": "0xf101e8720213560fab41104d53b3cc7ba0456ef3a98455aa7f022391783144a0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3e7820bcf567e6892d937c3cb10db263a4042e446799bca602535868d822384e",
+				"dweb:/ipfs/QmPG2oeDjKncqsEeyYGjAN7CwAJmMgHterXGGnpzhha4z7"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol": {
+			"keccak256": "0xd9517254724276e2e8de3769183c1f738f445f0095c26fd9b86d3c6687e887b9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0e604bcdcd5e5b2fb299ad09769cde6db19d5aa1929d1b5e939234a0f10d7eb8",
+				"dweb:/ipfs/Qmd8hXE3GZfBHuWx3RNiYgFW2ci7KvHtib8DiwzJ2dgo9V"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
+			"keccak256": "0xd32fb7f530a914b1083d10a6bed3a586f2451952fec04fe542bcc670a82f7ba5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://af63ab940a34687c45f0ad84960b048fc5f49330c92ccb422db7822a444733b9",
+				"dweb:/ipfs/QmUShaQEu8HS1GjDnsMJQ8jkZEBrecn6NuDZ3pfjY1gVck"
+			]
+		},
+		"@openzeppelin/contracts/utils/Address.sol": {
+			"keccak256": "0x3336baae5cf23e94274d75336e2d412193be508504aee185e61dc7d58cd05c8a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://39a05eec7083dfa0cc7e0cbfe6cd1bd085a340af1ede93fdff3ad047c5fb3d8e",
+				"dweb:/ipfs/QmVApz5fCUq2QC8gKTsNNdCmcedJ3ETHp68zR5N3WUKS4r"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x90565a39ae45c80f0468dc96c7b20d0afc3055f344c8203a0c9258239f350b9f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://26e8b38a7ac8e7b4463af00cf7fff1bf48ae9875765bf4f7751e100124d0bc8c",
+				"dweb:/ipfs/QmWcsmkVr24xmmjfnBQZoemFniXjj3vwT78Cz6uqZW1Hux"
+			]
+		},
+		"@openzeppelin/contracts/utils/Strings.sol": {
+			"keccak256": "0x391d3ba97ab6856a16b225d6ee29617ad15ff00db70f3b4df1ab5ea33aa47c9d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d636ba90bbbeed04a1ea7fe9ec2466757e30fd38ba2ca173636dbf69a518735e",
+				"dweb:/ipfs/QmQwCB2BHnEuYR22PYt9HkpbgeFDhq4rHmaYqAZbX3WRC7"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+			"keccak256": "0x5718c5df9bd67ac68a796961df938821bb5dc0cd4c6118d77e9145afb187409b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d10e1d9b26042424789246603906ad06143bf9a928f4e99de8b5e3bdc662f549",
+				"dweb:/ipfs/Qmejonoaj5MLekPus229rJQHcC6E9dz2xorjHJR84fMfmn"
+			]
+		},
+		"@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+			"keccak256": "0xa28007762d9da9db878dd421960c8cb9a10471f47ab5c1b3309bfe48e9e79ff4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://796ab6e88af7bf0e78def0f059310c903af6a312b565344e0ff524a0f26e81c6",
+				"dweb:/ipfs/QmcsVgLgzWdor3UnAztUkXKNGcysm1MPneWksF72AvnwBx"
+			]
+		},
+		"contracts/IMarket.sol": {
+			"keccak256": "0xba92e6ba3cc264091be2173743ac56a360482361a6ad3f506f69b88c4ac7e863",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://43503f37f5c7781a10f7dc77ed4c9a4c166890e6c295eae7c6f26d18b02ce870",
+				"dweb:/ipfs/QmSnCa3BWnHdGU43SDy9V1h7Ds7dVDUE9Pa67bcJYybjZ7"
+			]
+		},
+		"contracts/Market.sol": {
+			"keccak256": "0x0d0e2cfb4491880cab1aacf12c689dd2e734a94cd6c0f9edd439d9985f357c36",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b558aa9422f1d8a2ed037e3bd444481efe27b40e599543c61f91a2d3e1abc2f9",
+				"dweb:/ipfs/QmNfKxpt3yNyqTCofnhfCwqx9Tv646tsNHW99HaCz11ir1"
+			]
+		},
+		"contracts/MarketToken.sol": {
+			"keccak256": "0xda2199d343cb06ff4630e8dff333e4006e0fb5896db723dc22edabfb9a434a3a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e3d450eaa18391af52f14563194280b1d2ecb9e46bc44da7646c10b985ac0d09",
+				"dweb:/ipfs/QmfJ4yGEKy25G8VmamcfBrEtv1ghekseh2hAGPbjo9oXHs"
+			]
+		}
+	},
+	"version": 1
+}
